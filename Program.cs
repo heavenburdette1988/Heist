@@ -40,16 +40,28 @@ namespace Heist
               Console.WriteLine($"There are {myTeam.Count} members on your team.");
               //need to get this to work
             int bankDifficulty = 100;
+            int luckFactor = new Random().Next(-10, 10);
+            int bankTotalDifficulty =bankDifficulty + luckFactor;
+
             int teamSkillLevel = 0;
+
+           ;
+
             foreach(teamMember member in myTeam){
                 teamSkillLevel += member.skillLevel;
             };
-            if (teamSkillLevel > bankDifficulty)
+
+             Console.WriteLine($"The team's skill level is {teamSkillLevel}");
+            Console.WriteLine($"The banks's difficulty level is {bankTotalDifficulty}");
+
+            if (teamSkillLevel > bankTotalDifficulty)
             {
                 Console.WriteLine("Congrats");
                         }else{
                             Console.WriteLine("Do Better! Get a new team!");
                         }
+
+                    
 
              Console.WriteLine(teamSkillLevel);
         
