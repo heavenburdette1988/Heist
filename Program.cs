@@ -39,11 +39,18 @@ namespace Heist
 
               Console.WriteLine($"There are {myTeam.Count} members on your team.");
               //need to get this to work
-
+            int bankDifficulty = 100;
             int teamSkillLevel = 0;
             foreach(teamMember member in myTeam){
                 teamSkillLevel += member.skillLevel;
-            }
+            };
+            if (teamSkillLevel > bankDifficulty)
+            {
+                Console.WriteLine("Congrats");
+                        }else{
+                            Console.WriteLine("Do Better! Get a new team!");
+                        }
+
              Console.WriteLine(teamSkillLevel);
         
                 // foreach(teamMember teamMember in myTeam)
