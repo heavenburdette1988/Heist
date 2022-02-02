@@ -8,6 +8,9 @@ namespace Heist
     {
         static void Main(string[] args)
         {
+             
+             
+             
              List<teamMember> myTeam = new List<teamMember>();
            
            
@@ -34,13 +37,21 @@ namespace Heist
                 myTeam.Add(newMember);
             }
 
+              Console.WriteLine($"There are {myTeam.Count} members on your team.");
+              //need to get this to work
 
-                foreach(teamMember teamMember in myTeam)
-                {
-                    Console.WriteLine(teamMember.name);
-                    Console.WriteLine(teamMember.skillLevel);
-                    Console.WriteLine(teamMember.courageFactor);
-                }
+            int teamSkillLevel = 0;
+            foreach(teamMember member in myTeam){
+                teamSkillLevel += member.skillLevel;
+            }
+             Console.WriteLine(teamSkillLevel);
+        
+                // foreach(teamMember teamMember in myTeam)
+                // {
+                //     Console.WriteLine(teamMember.name);
+                //     Console.WriteLine(teamMember.skillLevel);
+                //     Console.WriteLine(teamMember.courageFactor);
+                // }
                 }
 
         }
