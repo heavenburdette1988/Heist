@@ -15,7 +15,11 @@ namespace Heist
            
            
             Console.WriteLine("Plan your Heist");
+        Console.WriteLine("How difficult would you like the bank to be?");
+        int bankDifficulty = int.Parse(Console.ReadLine());
             for (int i = 0; i == i; i++){
+              
+
             Console.WriteLine(" What is your name?");
             string name = Console.ReadLine();
                 if(name == ""){
@@ -37,15 +41,23 @@ namespace Heist
                 myTeam.Add(newMember);
             }
 
-              Console.WriteLine($"There are {myTeam.Count} members on your team.");
-              //need to get this to work
-            int bankDifficulty = 100;
+              Console.WriteLine($"There are {myTeam.Count} members on your team. How many trials would you like to run?");
+            
+             int trials = int.Parse(Console.ReadLine());
+                     int failedTrials = 0;
+                    int successfulTrails = 0;
+
+
+            for(int i = 0; i< trials; i++){
+
+           
+            
             int luckFactor = new Random().Next(-10, 10);
-            int bankTotalDifficulty =bankDifficulty + luckFactor;
+            int bankTotalDifficulty = bankDifficulty + luckFactor;
 
             int teamSkillLevel = 0;
 
-           ;
+           
 
             foreach(teamMember member in myTeam){
                 teamSkillLevel += member.skillLevel;
@@ -57,13 +69,17 @@ namespace Heist
             if (teamSkillLevel > bankTotalDifficulty)
             {
                 Console.WriteLine("Congrats");
+                    successfulTrails += 1;
                         }else{
                             Console.WriteLine("Do Better! Get a new team!");
+                            failedTrials += 1;
                         }
 
                     
 
              Console.WriteLine(teamSkillLevel);
+            }
+
         
                 // foreach(teamMember teamMember in myTeam)
                 // {
@@ -71,8 +87,14 @@ namespace Heist
                 //     Console.WriteLine(teamMember.skillLevel);
                 //     Console.WriteLine(teamMember.courageFactor);
                 // }
+                
+                        
+                    Console.WriteLine($"Your team Suceeded {successfulTrails} times");
+                    Console.WriteLine($"Your team failed {failedTrials} times");
+
                 }
 
+                
         }
     }
 
