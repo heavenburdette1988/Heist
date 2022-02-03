@@ -8,7 +8,7 @@ namespace Heist {
 
 //team member object to build team members
     public class teamMember 
-    {
+    {  //created a class for teamMember 
         public string name { get; set; }
         public int skillLevel { get; set; }
         public double courageFactor { get; set; }

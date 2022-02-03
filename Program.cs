@@ -39,6 +39,9 @@ namespace Heist
             Console.WriteLine($" Hello {name}. Your skill Level is {skillLevel} and your courage factor is {courageFactor}.");
                 // teamMember ben = new teamMember();
                 // ben.name = "ben";
+
+                //This instantiate a newMember so we can create a team.    We have to instantiate a instance to add it to createTeamMember
+                //if we do not have newMember then we can't  create team. 
                 teamMember newMember = new teamMember();
                 newMember.createTeamMember(name, skillLevel, courageFactor);                
                 Console.WriteLine(newMember.name);
